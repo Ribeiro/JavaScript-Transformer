@@ -6,7 +6,7 @@ import javax.script.ScriptEngineManager;
 
 public class JavaScriptTableTransformer {
 	
-	private ScriptEngine engine;
+	private final ScriptEngine engine;
 
 	public JavaScriptTableTransformer(Table table) {
 		ScriptEngineManager manager = new ScriptEngineManager();
