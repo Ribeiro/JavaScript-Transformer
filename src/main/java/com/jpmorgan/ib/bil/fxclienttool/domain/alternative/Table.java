@@ -2,8 +2,10 @@ package com.jpmorgan.ib.bil.fxclienttool.domain.alternative;
 
 import java.io.Serializable;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -55,6 +57,19 @@ public class Table implements Serializable {
 	
 	public Set<String> getHeaders() {
 		return this.headers;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	protected Table clone() throws CloneNotSupportedException {
+		Table clonedTable = new Table();
+			Map<String, Object> clonedMap = null;
+			for (Row row : this.rows) {
+				clonedMap = (Map<String, Object>) ((HashMap<String, Object>) row.getMap()).clone();
+				clonedTable.add(new Row(clonedMap));
+			}
+		
+		return clonedTable;
 	}
 
 }
