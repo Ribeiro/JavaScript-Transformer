@@ -6,12 +6,12 @@ import javax.script.ScriptEngineManager;
 
 public class JavaScriptTableTransformer {
 	
-	private ScriptEngine engine;
+	private final ScriptEngine engine;
 
 	public JavaScriptTableTransformer(Table table) {
 		ScriptEngineManager manager = new ScriptEngineManager();
 		this.engine = manager.getEngineByName ("js");
-		engine.getContext().setAttribute("table", table, ScriptContext.ENGINE_SCOPE);
+		this.engine.getContext().setAttribute("table", table, ScriptContext.ENGINE_SCOPE);
 	}
 	
 	public ScriptEngine getEngine() {
