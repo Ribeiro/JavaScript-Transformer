@@ -8,7 +8,7 @@ public class JavaScriptTableTransformer {
 	
 	private final ScriptEngine engine;
 
-	public JavaScriptTableTransformer(Table table) {
+	public JavaScriptTableTransformer(TableOld table) {
 		ScriptEngineManager manager = new ScriptEngineManager();
 		this.engine = manager.getEngineByName ("js");
 		this.engine.getContext().setAttribute("table", table, ScriptContext.ENGINE_SCOPE);

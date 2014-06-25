@@ -2,7 +2,7 @@ package com.jpmorgan.ib.bil.fxclienttool.domain;
 
 import java.util.List;
 
-public class Table {
+public class TableOld {
 	
 	private List<Row> rows;
 	
@@ -10,11 +10,11 @@ public class Table {
 		return rows;
 	}
 	
-	public Table(){
+	public TableOld(){
 		
 	}
 
-	public Table(List<Row> rows) {
+	public TableOld(List<Row> rows) {
 		this.rows = rows;
 	}
 	
